@@ -19,6 +19,8 @@
     background-color: #6900ff;
     border-radius: 8px;
     padding: .2rem;
+    font-weight:300;
+    
 }
 
 .info {
@@ -98,8 +100,11 @@ th {
     }
 
     .rank-btn {
-        margin: .5rem 0;
+        padding: .3rem;
+        
     }
+
+   
 }
 
 
