@@ -52,6 +52,12 @@ td, th {
     padding: 8px;
     text-align: center;
 }
+.positive{
+    color: green;
+}
+.negative{
+    color:#cc0000;
+}
 
 th {
     background-color: #333;

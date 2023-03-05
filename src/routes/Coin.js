@@ -16,6 +16,7 @@ const Coin = () => {
     useEffect(() => {
         axios.get(url).then((res) => {
             setCoin(res.data)
+            console.log(res.data)
         }).catch((error) => {
             console.log(error)
         })
@@ -58,12 +59,12 @@ const Coin = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{coin.market_data?.price_change_percentage_1h_in_currency ? <p>{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                                <td>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                                <td>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                                <td>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                                <td>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                                <td>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_1h_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_1h_in_currency ?  <p>{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_24h_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_7d_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_7d_in_currency ? <p>{coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_14d_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_14d_in_currency ? <p>{coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_30d_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_30d_in_currency ? <p>{coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                                <td className={coin.market_data?.price_change_percentage_1y_in_currency > 0 ? "positive" : "negative"}>{coin.market_data?.price_change_percentage_1y_in_currency ? <p>{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)}%</p> : null}</td>
 
                             </tr>
                         </tbody>
@@ -78,13 +79,14 @@ const Coin = () => {
                             </div>
                             <div className='row'>
                                 <h4>24 Hour High</h4>
-                                {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}                            </div>
+                                {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}                       
+                          </div>
 
                         </div>
                         <div className='right'>
                             <div className='row'>
                                 <h4>Market Cap</h4>
-                                {coin.market_data?.market_cap ? <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
+                                {coin.market_data?.market_cap ?  <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
                             </div>
                             <div className='row'>
                                 <h4>Circulating Supply</h4>
