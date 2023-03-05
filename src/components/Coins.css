@@ -11,7 +11,7 @@
     box-shadow: 0px 0px 12px #18191b;
     border-radius: 8px;
     margin: 1rem 1rem;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem  1rem;
     font-weight: 700;
 }
 
@@ -49,8 +49,20 @@ img {
 
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
     .hide-mobile {
         display: none;
     }
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .heading p{
+
+        margin-left: 9px;
+       
+    }
+  
 }
